@@ -151,7 +151,7 @@ public class Controller {
             return -1;
         } else {
             try {
-                String sql = "SELECT `audiolink` FROM `newword` WHERE `word` LIKE ?";
+                String sql = "SELECT `audiolink` FROM `newword` WHERE `word` = ?";
                 PreparedStatement ps = cnn.prepareStatement(sql);
                 ps.setString(1, word);
                 ResultSet rs = ps.executeQuery();
