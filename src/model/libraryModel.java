@@ -15,7 +15,8 @@ public class libraryModel {
     private String word;
     private String mean;
     private String pronunciation;
-
+    private String audiolink;
+            
     public int getId() {
         return id;
     }
@@ -47,6 +48,12 @@ public class libraryModel {
 
     public void setPronunciation(String pronunciation) {
         this.pronunciation = pronunciation;
+    }
+    public String getAudiolink(){
+        return audiolink;
+    }
+    public void setAudiolink(String audiolink){
+        this.audiolink = audiolink;
     }
 
     public libraryModel() {

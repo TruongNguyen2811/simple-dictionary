@@ -145,4 +145,27 @@ public class Controller {
         }
     }
 
+    public int PlayAudio(String word, List<libraryModel>List) {
+        Connection cnn = ConnectionDatabase.cnnDB();
+        if (cnn == null) {
+            return -1;
+        } else {
+            try {
+                String sql = "SELECT `audiolink` FROM `newword` WHERE `word` LIKE ?";
+                PreparedStatement ps = cnn.prepareStatement(sql);
+                ps.setString(1, word);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    libraryModel library_model = new libraryModel();
+                    library_model.setAudiolink(rs.getString("audiolink"));
+                    List.add(library_model);
+                }
+                    return 1;
+            } catch (SQLException ex) {
+                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                return -2;
+            }
+        }
+
+    }
 }
