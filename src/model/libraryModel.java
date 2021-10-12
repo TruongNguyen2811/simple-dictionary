@@ -15,7 +15,7 @@ public class libraryModel {
     private String word;
     private String mean;
     private String pronunciation;
-    
+
     public int getId() {
         return id;
     }
@@ -39,11 +39,13 @@ public class libraryModel {
     public void setMean(String mean) {
         this.mean = mean;
     }
-    public String getPronunciation(){
+
+    public String getPronunciation() {
         return pronunciation;
-                
+
     }
-    public void setPronunciation(String pronunciation){
+
+    public void setPronunciation(String pronunciation) {
         this.pronunciation = pronunciation;
     }
 
@@ -55,5 +57,10 @@ public class libraryModel {
         this.mean = mean;
     }
 
+    public libraryModel(String word, String mean, String pronunciation) {
+        this.word = word;
+        this.mean = mean;
+        this.pronunciation = pronunciation;
+    }
 
 }

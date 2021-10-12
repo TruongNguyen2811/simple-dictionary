@@ -48,6 +48,8 @@ public class Managing extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -154,22 +156,29 @@ public class Managing extends javax.swing.JFrame {
             }
         });
 
+        jTextField2.setText("jTextField2");
+
+        jLabel4.setText("pronunciation");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(189, 189, 189))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jTextField1)
                                 .addGap(18, 18, 18)
@@ -179,11 +188,7 @@ public class Managing extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(189, 189, 189)))
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))))
                 .addGap(139, 139, 139))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
@@ -220,7 +225,11 @@ public class Managing extends javax.swing.JFrame {
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,7 +261,7 @@ public class Managing extends javax.swing.JFrame {
             DefaultTableModel table = (DefaultTableModel) this.jTable2.getModel();
             table.setRowCount(0);
             for (libraryModel item : List) {
-                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean()});
+                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean(),item.getPronunciation()});
             }
         }
     }
@@ -263,17 +272,17 @@ public class Managing extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            // TODO add your handling code here:
-            String word = jTextField1.getText();
+        // TODO add your handling code here:
+        String word = jTextField1.getText();
         String mean = jTextArea1.getText();
-
+        String pronunciation = jTextField2.getText();
         List<libraryModel> List = new ArrayList<libraryModel>();
         int testSerachWord = new controller.Controller().SearchWord(word, List);
         if (testSerachWord == 1) {
             DefaultTableModel table = (DefaultTableModel) this.jTable2.getModel();
             table.setRowCount(0);
             for (libraryModel item : List) {
-                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean()});
+                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean(),item.getPronunciation()});
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -282,7 +291,8 @@ public class Managing extends javax.swing.JFrame {
         // TODO add your handling code here:
         String word = jTextField1.getText();
         String mean = jTextArea1.getText();
-        libraryModel lbModel = new libraryModel(word, mean);
+        String pronunciation = jTextField2.getText();
+        libraryModel lbModel = new libraryModel(word, mean, pronunciation);
         int testAddWord = new controller.Controller().AddWord(lbModel);
         refresh();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -291,7 +301,7 @@ public class Managing extends javax.swing.JFrame {
         // TODO add your handling code here:
         String word = jTextField1.getText();
         int testdeleteWord = new controller.Controller().DeleteWord(word);
-        if(testdeleteWord == 1 ){
+        if (testdeleteWord == 1) {
             refresh();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -308,21 +318,22 @@ public class Managing extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         close();
-        admin menu= new admin();
+        admin menu = new admin();
         menu.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         close();
-           library lib= new library();
-           lib.setVisible(true);
+        library lib = new library();
+        lib.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     public void close() {
-        WindowEvent closeWindow= new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
+
     /**
      * @param args the command line arguments
      */
@@ -368,11 +379,13 @@ public class Managing extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

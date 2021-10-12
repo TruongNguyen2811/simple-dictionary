@@ -47,6 +47,7 @@ public class Controller {
                     library_model.setId(rs.getInt("id"));
                     library_model.setWord(rs.getString("word"));
                     library_model.setMean(rs.getString("mean"));
+                    library_model.setPronunciation(rs.getString("pronunciation"));
                     List.add(library_model);
                 }
                 return 1;
@@ -55,9 +56,9 @@ public class Controller {
                 return -2;
             }
         }
-
+        
     }
-
+    
     public int ShowListWord(List<libraryModel> List) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -72,6 +73,7 @@ public class Controller {
                     library_model.setId(rs.getInt("id"));
                     library_model.setWord(rs.getString("word"));
                     library_model.setMean(rs.getString("mean"));
+                    library_model.setPronunciation(rs.getString("pronunciation"));
                     List.add(library_model);
                 }
                 return 1;
@@ -80,9 +82,9 @@ public class Controller {
                 return -2;
             }
         }
-
+        
     }
-
+    
     public int AddWord(libraryModel lbModel) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -98,11 +100,11 @@ public class Controller {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
                 return -2;
             }
-
+            
         }
-
+        
     }
-
+    
     public int UpdateWord(libraryModel lbModel, String word) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -120,11 +122,11 @@ public class Controller {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
                 return -2;
             }
-
+            
         }
-
+        
     }
-
+    
     public int DeleteWord(String word) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -141,5 +143,5 @@ public class Controller {
             }
         }
     }
-
+    
 }
