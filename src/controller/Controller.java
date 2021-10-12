@@ -56,9 +56,9 @@ public class Controller {
                 return -2;
             }
         }
-        
+
     }
-    
+
     public int ShowListWord(List<libraryModel> List) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -82,29 +82,30 @@ public class Controller {
                 return -2;
             }
         }
-        
+
     }
-    
+
     public int AddWord(libraryModel lbModel) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
             return -1;
         } else {
             try {
-                String sql = "INSERT INTO `newword`(`word`, `mean`) VALUES (?,?)";
+                String sql = "INSERT INTO `newword`(`word`, `mean`,`pronunciation`) VALUES (?,?,?)";
                 PreparedStatement ps = cnn.prepareStatement(sql);
                 ps.setString(1, lbModel.getWord());
                 ps.setString(2, lbModel.getMean());
+                ps.setString(3, lbModel.getPronunciation());
                 return ps.executeUpdate();
             } catch (SQLException ex) {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
                 return -2;
             }
-            
+
         }
-        
+
     }
-    
+
     public int UpdateWord(libraryModel lbModel, String word) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -114,7 +115,7 @@ public class Controller {
                 String sql = "UPDATE `newword` SET `mean`=? WHERE `word`=?";
                 PreparedStatement ps = cnn.prepareStatement(sql);
                 ps.setString(2, word);
-                
+
                 ps.setString(1, lbModel.getMean());
                 ps.executeUpdate();
                 return 1;
@@ -122,11 +123,11 @@ public class Controller {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
                 return -2;
             }
-            
+
         }
-        
+
     }
-    
+
     public int DeleteWord(String word) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -143,5 +144,5 @@ public class Controller {
             }
         }
     }
-    
+
 }

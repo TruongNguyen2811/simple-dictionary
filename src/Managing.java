@@ -261,7 +261,7 @@ public class Managing extends javax.swing.JFrame {
             DefaultTableModel table = (DefaultTableModel) this.jTable2.getModel();
             table.setRowCount(0);
             for (libraryModel item : List) {
-                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean(),item.getPronunciation()});
+                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean(), item.getPronunciation()});
             }
         }
     }
@@ -282,7 +282,7 @@ public class Managing extends javax.swing.JFrame {
             DefaultTableModel table = (DefaultTableModel) this.jTable2.getModel();
             table.setRowCount(0);
             for (libraryModel item : List) {
-                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean(),item.getPronunciation()});
+                table.addRow(new Object[]{item.getId(), item.getWord(), item.getMean(), item.getPronunciation()});
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
