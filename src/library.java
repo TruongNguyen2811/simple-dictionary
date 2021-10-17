@@ -247,7 +247,8 @@ public class library extends javax.swing.JFrame {
         int checkPlayAudio = new controller.Controller().PlayAudio(word,List);
         if (checkPlayAudio == 1){
             for(libraryModel library_item : List){
-                String song ="D:\\M.E\\" + library_item.getAudiolink();
+                //"D:\\M.E\\" +
+                String song =  library_item.getAudiolink();
                 MP3Player mp3Player = new MP3Player(new File(song));
                 mp3Player.play();
             

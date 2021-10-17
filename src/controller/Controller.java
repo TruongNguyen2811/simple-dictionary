@@ -38,10 +38,10 @@ public class Controller {
                 //dien String vao dau dau ?
                 ps.setString(1, "%" + word + "%");
 
-                //lay ket qua tren databse dua vao bien rs
+             
                 ResultSet rs = ps.executeQuery();
 
-                //lay tung phan tu trong bien rs
+                
                 while (rs.next()) {
                     libraryModel library_model = new libraryModel();
                     library_model.setId(rs.getInt("id"));
