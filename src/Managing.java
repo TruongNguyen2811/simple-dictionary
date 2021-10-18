@@ -320,7 +320,7 @@ public class Managing extends javax.swing.JFrame {
         String mean = jTextArea1.getText();
         String pronunciation = jTextField2.getText();
         List<libraryModel> List = new ArrayList<libraryModel>();
-        int testSerachWord = new controller.Controller().SearchWord(word, List);
+        int testSerachWord = new controller.Controller().SearchAllWord(word, List);
         if (testSerachWord == 1) {
             DefaultTableModel table = (DefaultTableModel) this.jTable2.getModel();
             table.setRowCount(0);

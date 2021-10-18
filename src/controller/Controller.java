@@ -31,14 +31,45 @@ public class Controller {
         } else {
             try {
                 String sql = "SELECT * FROM `newword` WHERE word LIKE ?";
-
-                //set cau lenh sql
                 PreparedStatement ps = cnn.prepareStatement(sql);
 
-                //dien String vao dau dau ?
-                ps.setString(1, "%" + word + "%");
+              
+               // ps.setString(1, "%" + word + "%");
+                ps.setString(1,  word  );
 
-             
+                ResultSet rs = ps.executeQuery();
+
+                
+                while (rs.next()) {
+                    libraryModel library_model = new libraryModel();
+                    library_model.setId(rs.getInt("id"));
+                    library_model.setWord(rs.getString("word"));
+                    library_model.setMean(rs.getString("mean"));
+                    library_model.setPronunciation(rs.getString("pronunciation"));
+                    library_model.setAudiolink(rs.getString("audiolink"));
+                    List.add(library_model);
+                }
+                return 1;
+            } catch (SQLException ex) {
+                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                return -2;
+            }
+        }
+
+    }
+    public int SearchAllWord(String word, List<libraryModel> List) {
+        Connection cnn = ConnectionDatabase.cnnDB();
+        if (cnn == null) {
+            return -1;
+        } else {
+            try {
+                String sql = "SELECT * FROM `newword` WHERE word LIKE ?";
+                PreparedStatement ps = cnn.prepareStatement(sql);
+
+              
+                ps.setString(1, "%" + word + "%");
+               // ps.setString(1,  word  );
+
                 ResultSet rs = ps.executeQuery();
 
                 
