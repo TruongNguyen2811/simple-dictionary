@@ -16,7 +16,7 @@ public class libraryModel {
     public String mean;
     public String pronunciation;
     public String audiolink;
-            
+
     public int getId() {
         return id;
     }
@@ -49,35 +49,35 @@ public class libraryModel {
     public void setPronunciation(String pronunciation) {
         this.pronunciation = pronunciation;
     }
-    public String getAudiolink(){
+
+    public String getAudiolink() {
         return audiolink;
     }
-    public void setAudiolink(String audiolink){
+
+    public void setAudiolink(String audiolink) {
         this.audiolink = audiolink;
     }
 
     public libraryModel() {
     }
-   
 
     public libraryModel(String word, String mean) {
         this.word = word;
         this.mean = mean;
     }
-    
-    
 
     public libraryModel(String word, String mean, String pronunciation) {
         this.word = word;
         this.mean = mean;
         this.pronunciation = pronunciation;
     }
-    public libraryModel(String word, String mean, String pronunciation , String audiolink) {
+
+    public libraryModel(String word, String mean, String pronunciation, String audiolink) {
         this.word = word;
         this.mean = mean;
         this.pronunciation = pronunciation;
         this.audiolink = audiolink;
-    
+
     }
 
 }

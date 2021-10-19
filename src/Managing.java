@@ -377,31 +377,30 @@ public class Managing extends javax.swing.JFrame {
         // TODO add your handling code here:
         String word = jTextField1.getText();
         String pronunciation = jTextField2.getText();
-        String mean ="";
-        libraryModel lbModel = new libraryModel(word, mean  ,pronunciation);
+        String mean = "";
+        libraryModel lbModel = new libraryModel(word, mean, pronunciation);
         int testAddWord = new controller.Controller().UpdatePronunciation(lbModel, word);
         refresh();
-        
-        
+
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         String word = jTextField1.getText();
         String pronunciation = "";
-        String mean ="";
+        String mean = "";
         String audiolink = jTextField3.getText();
-        libraryModel lbModel = new libraryModel(word, mean  ,pronunciation,audiolink);
+        libraryModel lbModel = new libraryModel(word, mean, pronunciation, audiolink);
         int testAddWord = new controller.Controller().UpdateAudioLink(lbModel, word);
         refresh();
-        
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     public void close() {
         WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
-    
 
     /**
      * @param args the command line arguments

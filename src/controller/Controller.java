@@ -33,13 +33,11 @@ public class Controller {
                 String sql = "SELECT * FROM `newword` WHERE word LIKE ?";
                 PreparedStatement ps = cnn.prepareStatement(sql);
 
-              
-               // ps.setString(1, "%" + word + "%");
-                ps.setString(1,  word  );
+                // ps.setString(1, "%" + word + "%");
+                ps.setString(1, word);
 
                 ResultSet rs = ps.executeQuery();
 
-                
                 while (rs.next()) {
                     libraryModel library_model = new libraryModel();
                     library_model.setId(rs.getInt("id"));
@@ -57,6 +55,7 @@ public class Controller {
         }
 
     }
+
     public int SearchAllWord(String word, List<libraryModel> List) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -66,13 +65,11 @@ public class Controller {
                 String sql = "SELECT * FROM `newword` WHERE word LIKE ?";
                 PreparedStatement ps = cnn.prepareStatement(sql);
 
-              
                 ps.setString(1, "%" + word + "%");
-               // ps.setString(1,  word  );
+                // ps.setString(1,  word  );
 
                 ResultSet rs = ps.executeQuery();
 
-                
                 while (rs.next()) {
                     libraryModel library_model = new libraryModel();
                     library_model.setId(rs.getInt("id"));
@@ -178,7 +175,7 @@ public class Controller {
         }
     }
 
-    public int PlayAudio(String word, List<libraryModel>List) {
+    public int PlayAudio(String word, List<libraryModel> List) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
             return -1;
@@ -193,7 +190,7 @@ public class Controller {
                     library_model.setAudiolink(rs.getString("audiolink"));
                     List.add(library_model);
                 }
-                    return 1;
+                return 1;
             } catch (SQLException ex) {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
                 return -2;
@@ -201,6 +198,7 @@ public class Controller {
         }
 
     }
+
     public int UpdatePronunciation(libraryModel lbModel, String word) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {
@@ -221,7 +219,7 @@ public class Controller {
         }
 
     }
-    
+
     public int UpdateAudioLink(libraryModel lbModel, String word) {
         Connection cnn = ConnectionDatabase.cnnDB();
         if (cnn == null) {

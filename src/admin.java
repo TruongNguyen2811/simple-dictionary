@@ -6,6 +6,7 @@
 
 import java.awt.event.WindowEvent;
 import java.awt.Toolkit;
+
 /**
  *
  * @author afkda
@@ -147,34 +148,35 @@ public class admin extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         close();
-        Managing ma =new Managing();
+        Managing ma = new Managing();
         ma.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           // TODO add your handling code here:
-           close();
-           library lib= new library();
-           lib.setVisible(true);
+        // TODO add your handling code here:
+        close();
+        library lib = new library();
+        lib.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         close();
-           about about= new about();
-           about.setVisible(true);
+        about about = new about();
+        about.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         close();
-           help help= new help();
-           help.setVisible(true);
+        help help = new help();
+        help.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
     public void close() {
-        WindowEvent closeWindow= new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
+
     /**
      * @param args the command line arguments
      */
